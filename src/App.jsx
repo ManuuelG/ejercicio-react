@@ -1,34 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Stack from 'react-bootstrap/Stack'
+import Slider from '@mui/material/Slider'
+import InputGroup from 'react-bootstrap/InputGroup'
+import Form from 'react-bootstrap/Form'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <Stack gap={4} className="center-container">
+        <div className="border-container">
+          {' '}
+          <div className="p-2">SIMULA TU CRÉDITO</div>
+          <div className="p-2">
+            <InputGroup>
+              <InputGroup.Text>$</InputGroup.Text>
+              <Form.Control aria-label="Amount (to the nearest dollar)" />
+              <InputGroup.Text>.00</InputGroup.Text>
+            </InputGroup>
+            MONTO TOTAL
+            <Slider
+              size="small"
+              defaultValue={70}
+              aria-label="Small"
+              valueLabelDisplay="auto"
+              sx={{ color: 'white' }}
+            />
+          </div>
+          <div className="p-2">
+            PLAZO
+            <Slider
+              size="small"
+              defaultValue={70}
+              aria-label="Small"
+              valueLabelDisplay="auto"
+              sx={{ color: 'white' }}
+            />
+          </div>
+          <div className="p-2">CUOTA FIJA POR MES</div>
+        </div>
+      </Stack>
+    </div>
   )
 }
 
